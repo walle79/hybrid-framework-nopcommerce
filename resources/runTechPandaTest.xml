@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="TechPanda">
+  <test name="Run On Chrome">
+    <classes>
+      <class name="com.techpanda.login.User_01_Register_Login"/>
+    </classes>
+  </test>
+</suite>

@@ -2,36 +2,31 @@ package com.techpanda.login;
 
 import org.testng.annotations.Test;
 
+import commons.BaseTest;
 import pageObjects.techpanda.HomePageObject;
 import pageObjects.techpanda.LoginPageObject;
 import pageObjects.techpanda.MyDashboardPageObject;
 
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 
 import java.util.Random;
-import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 
-public class User_01_Register_Login {
+public class User_01_Register_Login extends BaseTest {
 	WebDriver driver;
 	String emailAddress, password;
-	String projectLocation = System.getProperty("user.dir");
-
+	
+	@Parameters({"browser", "url"})
 	@BeforeClass
-	public void beforeClass() {
-		System.setProperty("webdriver.chrome.driver", projectLocation + "\\browserDrivers\\chromedriver.exe");
-		driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		driver.manage().window().maximize();
+	public void beforeClass(String browserName, String appUrl) {
+		driver = getBrowserDriver(browserName, appUrl);
 		
 		emailAddress = "son" + getRandomEmail();
 		password = "123456";
-		
-		driver.get("http://live.techpanda.org/index.php/");
 	}
 
 	@Test

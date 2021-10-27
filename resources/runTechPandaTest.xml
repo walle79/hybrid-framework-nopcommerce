@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="TechPanda">
+	<parameter name="url" value="http://live.techpanda.org/index.php/" />
+
   <test name="Run On Chrome">
+  <parameter name="browser" value="chrome" />
+    <classes>
+      <class name="com.techpanda.login.User_01_Register_Login"/>
+    </classes>
+  </test>
+  
+  <test name="Run On Firefox">
+  <parameter name="browser" value="firefox" />
     <classes>
       <class name="com.techpanda.login.User_01_Register_Login"/>
     </classes>

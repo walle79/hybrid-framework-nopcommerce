@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 
 import pageObjects.nopcommerce.HomePageObject;
 import pageObjects.nopcommerce.LoginPageObject;
+import pageObjects.nopcommerce.PageGeneratorManager;
 import pageObjects.nopcommerce.RegisterPageObject;
 
 import org.testng.annotations.BeforeClass;
@@ -36,11 +37,10 @@ public class User_01_Register_Login {
 
 	@Test
 	public void TC_01_Register_To_System() {
-		homePage = new HomePageObject(driver);
+		homePage = PageGeneratorManager.getHomePage(driver);
 		Assert.assertTrue(homePage.isHomePageSliderDisplayed());
 		
-		homePage.clickToRegisterLink();
-		registerPage = new RegisterPageObject(driver);
+		registerPage = homePage.clickToRegisterLink();
 		
 		registerPage.clickToMaleRadioBtn();
 		registerPage.inputToFirstNameTxt("nguyen");
@@ -52,21 +52,18 @@ public class User_01_Register_Login {
 		
 		Assert.assertTrue(registerPage.isSuccessMsgDisplayed());
 		
-		registerPage.clickToLogoutLink();
-		homePage = new HomePageObject(driver);
+		homePage = registerPage.clickToLogoutLink();
 		Assert.assertTrue(homePage.isHomePageSliderDisplayed());
 	}
 	
 	@Test
 	public void TC_02_Login_To_System() {
-		homePage.clickToLoginLink();
-		loginPage = new LoginPageObject(driver);
+		loginPage = homePage.clickToLoginLink();
 		
 		loginPage.inputToEmailTxt(emailAddress);
 		loginPage.inputToPasswordTxt(password);
-		loginPage.clickToLoginBtn();
+		homePage = loginPage.clickToLoginBtn();
 		
-		homePage = new HomePageObject(driver);
 		Assert.assertTrue(homePage.isHomePageSliderDisplayed());
 	}
 

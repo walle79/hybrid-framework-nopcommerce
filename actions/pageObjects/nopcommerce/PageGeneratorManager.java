@@ -6,6 +6,7 @@ public class PageGeneratorManager {
 	private static HomePageObject homePage;
 	private static LoginPageObject loginPage;
 	private static RegisterPageObject registerPage;
+	private static MyAccountPageObject myAccountPage;
 	
 	public static HomePageObject getHomePage(WebDriver driver) {
 		if (homePage == null) {
@@ -26,6 +27,13 @@ public class PageGeneratorManager {
 			registerPage = new RegisterPageObject(driver);
 		}
 		return registerPage;
+	}
+	
+	public static MyAccountPageObject getMyAccountPage(WebDriver driver) {
+		if (myAccountPage == null) {
+			myAccountPage = new MyAccountPageObject(driver);
+		}
+		return myAccountPage;
 	}
 
 }

@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="NopCommerce">
+
+	<parameter name = "url" value = "https://demo.nopcommerce.com/" />
+
   <test name="Run On Chrome">
+	<parameter name = "browser" value = "chrome" />
     <classes>
-      <class name="com.nopcommerce.login.User_01_Register_Login"/>
+      <class name="com.nopcommerce.MyAccount"/>
     </classes>
   </test>
 </suite>

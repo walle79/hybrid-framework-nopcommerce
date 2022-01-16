@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Orange HRM">
+
+	<parameter name = "url" value = "https://opensource-demo.orangehrmlive.com/" />
+
+  <test name="Run On Chrome">
+	<parameter name = "browser" value = "chrome" />
+    <classes>
+      <class name="com.hrm.employee.User_01_Register_Login"/>
+    </classes>
+  </test>
+</suite>

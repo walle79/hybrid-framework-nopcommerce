@@ -1,7 +1,6 @@
 package pageUIs.nopcommerce;
 
 public class RegisterPageUI {
-	public static final String MALE_RADIO_BTN = "//input[@id='gender-male']";
 	public static final String FIRSTNAME_TXT = "//input[@id='FirstName']";
 	public static final String LASTNAME_TXT = "//input[@id='LastName']";
 	public static final String EMAIL_TXT = "//input[@id='Email']";

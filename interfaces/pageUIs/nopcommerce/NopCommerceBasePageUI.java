@@ -8,5 +8,8 @@ public class NopCommerceBasePageUI {
 	public static final String EMAIL_ERROR_MSG = "//div[@class='%s' and contains(string(),'%s')]";
 	public static final String DYNAMIC_MY_ACCOUNT_PAGE_BY_NAME = "//div[@class='listbox']//a[contains(string(),'%s')]";
 	public static final String DYNAMIC_RADIO_BTN = "//input[@id='%s']";
-	public static final String DYNAMIC_DATE_OF_BIRTH = "//select[@name='%s']";
+	public static final String DYNAMIC_DROPDOWN_BY_TEXT = "//select[@name='%s']";
+	public static final String DYNAMIC_INFO_BY_CLASS_AND_TEXT = "//li[@class='%s' and contains(string(),'%s')]";
+	public static final String DYNAMIC_PRODUCT_BY_NAME = "//h2[@class='product-title' and contains(string(),'%s')]";
+	public static final String DYNAMIC_REVIEW_TITLE_CONTENT = "//div[@class='%s' and contains(string(),'%s')]";
 }

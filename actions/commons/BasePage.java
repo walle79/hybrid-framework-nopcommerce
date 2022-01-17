@@ -510,14 +510,29 @@ public class BasePage {
 		clickToElement(driver, NopCommerceBasePageUI.DYNAMIC_RADIO_BTN, genderName);
 	}
 	
-	public void selectDateOfBirthDropdownByText(WebDriver driver, String dropdownName, String itemValue) {
-		waitForElementVisible(driver, NopCommerceBasePageUI.DYNAMIC_DATE_OF_BIRTH, dropdownName);
-		selectDropdownByText(driver, NopCommerceBasePageUI.DYNAMIC_DATE_OF_BIRTH, itemValue, dropdownName);
+	public void selecNopCommerceDropdownByText(WebDriver driver, String dropdownName, String itemValue) {
+		waitForElementVisible(driver, NopCommerceBasePageUI.DYNAMIC_DROPDOWN_BY_TEXT, dropdownName);
+		selectDropdownByText(driver, NopCommerceBasePageUI.DYNAMIC_DROPDOWN_BY_TEXT, itemValue, dropdownName);
 	}
 	
-	public String getDateOfBirthSelectedItemDropdownByText(WebDriver driver, String dropdownName) {
-		waitForElementVisible(driver, NopCommerceBasePageUI.DYNAMIC_DATE_OF_BIRTH, dropdownName);
-		return getSelectedItemDropdown(driver, NopCommerceBasePageUI.DYNAMIC_DATE_OF_BIRTH, dropdownName);
+	public String getSelectedItemDropdownByText(WebDriver driver, String dropdownName) {
+		waitForElementVisible(driver, NopCommerceBasePageUI.DYNAMIC_DROPDOWN_BY_TEXT, dropdownName);
+		return getSelectedItemDropdown(driver, NopCommerceBasePageUI.DYNAMIC_DROPDOWN_BY_TEXT, dropdownName);
+	}
+	
+	public boolean isUpdatedInformationDiplayedCorrect(WebDriver driver, String classInfo, String textDisplayed) {
+		waitForElementVisible(driver, NopCommerceBasePageUI.DYNAMIC_INFO_BY_CLASS_AND_TEXT, classInfo, textDisplayed);
+		return isElementDisplayed(driver, NopCommerceBasePageUI.DYNAMIC_INFO_BY_CLASS_AND_TEXT, classInfo, textDisplayed);
+	}
+	
+	public void clickToProductByName(WebDriver driver, String productName) {
+		waitForElementClickable(driver, NopCommerceBasePageUI.DYNAMIC_PRODUCT_BY_NAME, productName);
+		clickToElement(driver, NopCommerceBasePageUI.DYNAMIC_PRODUCT_BY_NAME, productName);
+	}
+	
+	public boolean isReviewInformationDisplayedCorrect(WebDriver driver, String reviewClass, String reviewText) {
+		waitForElementVisible(driver, NopCommerceBasePageUI.DYNAMIC_REVIEW_TITLE_CONTENT, reviewClass, reviewText);
+		return isElementDisplayed(driver, NopCommerceBasePageUI.DYNAMIC_REVIEW_TITLE_CONTENT, reviewClass, reviewText);
 	}
 	
 	private Alert alert;

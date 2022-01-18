@@ -242,7 +242,8 @@ public class BasePage {
 		}
 	}
 	
-	public void uncheckToCheckBox(WebDriver driver, String locator) {
+	public void uncheckToCheckBox(WebDriver driver, String locator, String... params) {
+		locator = getDynamicLocator(locator, params);
 		if (getElement(driver, locator).isSelected()) {
 			getElement(driver, locator).click();
 		}
@@ -533,6 +534,21 @@ public class BasePage {
 	public boolean isReviewInformationDisplayedCorrect(WebDriver driver, String reviewClass, String reviewText) {
 		waitForElementVisible(driver, NopCommerceBasePageUI.DYNAMIC_REVIEW_TITLE_CONTENT, reviewClass, reviewText);
 		return isElementDisplayed(driver, NopCommerceBasePageUI.DYNAMIC_REVIEW_TITLE_CONTENT, reviewClass, reviewText);
+	}
+	
+	public void clickFooterLinkByName(WebDriver driver, String footerLinkName) {
+		waitForElementVisible(driver, NopCommerceBasePageUI.DYNAMIC_FOOTER_LINK_BY_NAME, footerLinkName);
+		clickToElement(driver, NopCommerceBasePageUI.DYNAMIC_FOOTER_LINK_BY_NAME, footerLinkName);
+	}
+	
+	public void checkToSearchCheckboxByID(WebDriver driver, String checkboxID) {
+		waitForElementClickable(driver, NopCommerceBasePageUI.DYNAMIC_SEARCH_CHECKBOX, checkboxID);
+		checkToCheckBoxOrRadio(driver, NopCommerceBasePageUI.DYNAMIC_SEARCH_CHECKBOX, checkboxID);
+	}
+	
+	public void unCheckToSearchCheckboxByID(WebDriver driver, String checkboxID) {
+		waitForElementClickable(driver, NopCommerceBasePageUI.DYNAMIC_SEARCH_CHECKBOX, checkboxID);
+		uncheckToCheckBox(driver, NopCommerceBasePageUI.DYNAMIC_SEARCH_CHECKBOX, checkboxID);
 	}
 	
 	private Alert alert;

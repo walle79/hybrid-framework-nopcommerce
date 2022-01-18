@@ -46,7 +46,7 @@ public class MyAccount extends BaseTest {
 		fax = "6666666666";
 		review_title = "Very Good";
 		review_text = "The best mackbook ever seen";
-		emailAddress = "te@gmail.com";
+		emailAddress = "tt@gmail.com";
 		password = "123456";
 		new_password = "Son@181295";
 

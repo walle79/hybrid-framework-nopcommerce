@@ -6,7 +6,7 @@
   <test name="Run On Chrome">
 	<parameter name = "browser" value = "chrome" />
     <classes>
-      <class name="com.nopcommerce.MyAccount"/>
+      <class name="com.nopcommerce.Search"/>
     </classes>
   </test>
 </suite>
